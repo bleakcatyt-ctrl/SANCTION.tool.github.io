@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Sanction — GTA V Anti-Cheat Tool</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="bgCanvas"></canvas>
+
+    <div class="language-switcher" id="langSwitcher">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">&#9678;</span>
+                SANCTION<span class="logo-dot">.</span>tool
+            </div>
+            <nav class="nav">
+                <a href="#features" class="nav-link" data-i18n="nav_features">Возможности</a>
+                <a href="#how-it-works" class="nav-link" data-i18n="nav_how">Как работает</a>
+                <a href="#pricing" class="nav-link nav-cta" data-i18n="nav_buy">Купить</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-badge" data-i18n="hero_badge">Более 12 000 игроков</div>
+            <h1 class="hero-title">
+                <span class="hero-line" data-i18n="hero_line1">Находим читы.</span>
+                <span class="hero-line accent" data-i18n="hero_line2">Защищаем аккаунт.</span>
+            </h1>
+            <p class="hero-desc" data-i18n="hero_desc">
+                Sanction сканирует память, файлы и логи GTA V для обнаружения сторонних модификаций. Опережайте баны с помощью обнаружения в реальном времени.
+            </p>
+            <div class="hero-actions">
+                <form method="POST" action="https://yoomoney.ru/quickpay/confirm.xml" style="display:inline-block;">
+                    <input type="hidden" name="receiver" value="4100119524717720">
+                    <input type="hidden" name="quickpay-form" value="shop">
+                    <input type="hidden" name="targets" value="Sanction License">
+                    <input type="hidden" name="paymentType" value="AC">
+                    <input type="hidden" name="sum" value="1999">
+                    <input type="hidden" name="label" value="sanction">
+                    <input type="hidden" name="successURL" value="https://drive.google.com/file/d/1hZYqmamQ-8FLJ9kgyoTqsCEvMBU8ne2a/view">
+                    <button type="submit" class="btn btn-primary btn-lg" data-i18n="hero_cta">Получить Sanction</button>
+                </form>
+                <a href="#how-it-works" class="btn btn-outline btn-lg" data-i18n="hero_learn">Подробнее</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value">12.4K</span>
+                    <span class="stat-label" data-i18n="stat_users">Активных пользователей</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">99.8%</span>
+                    <span class="stat-label" data-i18n="stat_accuracy">Точность обнаружения</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">0</span>
+                    <span class="stat-label" data-i18n="stat_bans">Ложных банов</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2 class="section-title" data-i18n="features_title">Мощный комплекс защиты</h2>
+            <p class="section-subtitle" data-i18n="features_subtitle">Всё необходимое для защиты аккаунта GTA V от читерского ПО.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#9670;</div>
+                    <h3 data-i18n="feature1_title">Сканер памяти</h3>
+                    <p data-i18n="feature1_desc">Глубокое сканирование активных процессов на наличие известных сигнатур читов. Обнаруживает внедрённые DLL и изменённые участки памяти в реальном времени.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#9678;</div>
+                    <h3 data-i18n="feature2_title">Анализатор логов</h3>
+                    <p data-i18n="feature2_desc">Анализирует файлы логов GTA V для поиска аномалий, несанкционированных скриптовых хуков и следов тренеров до запуска игры.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#9711;</div>
+                    <h3 data-i18n="feature3_title">Проверка целостности файлов</h3>
+                    <p data-i18n="feature3_desc">Сравнивает файлы игры с оригинальными хешами. Мгновенно помечает изменённые .asi, .dll и .exe файлы с подробными отчётами.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#9644;</div>
+                    <h3 data-i18n="feature4_title">Тихий режим</h3>
+                    <p data-i18n="feature4_desc">Работает в фоне без оверлеев. Создаёт приватные отчёты. Данные никогда не отправляются на внешние серверы.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#9654;</div>
+                    <h3 data-i18n="feature5_title">Автообновления</h3>
+                    <p data-i18n="feature5_desc">База сигнатур обновляется автоматически. Всегда обнаруживает новейшие варианты читов и новые угрозы.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#9634;</div>
+                    <h3 data-i18n="feature6_title">Портативная версия</h3>
+                    <p data-i18n="feature6_desc">Один исполняемый файл. Установка не требуется. Работает с USB-накопителя. Полная поддержка Windows 10 и 11.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <h2 class="section-title" data-i18n="how_title">Как это работает</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h3 data-i18n="step1_title">Скачать и запустить</h3>
+                    <p data-i18n="step1_desc">Скачайте портативный исполняемый файл. Установка не требуется. Запустите перед стартом GTA V.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h3 data-i18n="step2_title">Автоматическое сканирование</h3>
+                    <p data-i18n="step2_desc">Sanction автоматически сканирует память, файлы и логи. Процесс занимает менее 10 секунд.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h3 data-i18n="step3_title">Просмотр отчёта</h3>
+                    <p data-i18n="step3_desc">Получите понятный отчёт с обнаруженными угрозами. Зелёный — чисто, красный — требуется действие.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <h3 data-i18n="step4_title">Играйте безопасно</h3>
+                    <p data-i18n="step4_desc">С чистым отчётом запускайте GTA V и играйте с уверенностью. Sanction работает тихо в фоне.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <h2 class="section-title" data-i18n="pricing_title">Простое ценообразование</h2>
+            <p class="section-subtitle" data-i18n="pricing_subtitle">Один платёж. Пожизненный доступ. Все будущие обновления включены.</p>
+            <div class="pricing-card">
+                <div class="pricing-badge" data-i18n="pricing_badge">Самый популярный</div>
+                <h3 data-i18n="pricing_plan">Пожизненная лицензия</h3>
+                <div class="price">
+                    <span class="price-old">$39.99</span>
+                    <span class="price-current">$19.99</span>
+                    <span class="price-suffix" data-i18n="pricing_onetime">единоразово</span>
+                </div>
+                <ul class="pricing-features">
+                    <li data-i18n="pricing_feat1">Пожизненный доступ к Sanction</li>
+                    <li data-i18n="pricing_feat2">Все будущие обновления бесплатно</li>
+                    <li data-i18n="pricing_feat3">Сканирование памяти и файлов</li>
+                    <li data-i18n="pricing_feat4">Инструменты анализа логов</li>
+                    <li data-i18n="pricing_feat5">Тихий фоновый режим</li>
+                    <li data-i18n="pricing_feat6">Приоритетная поддержка</li>
+                </ul>
+                <form method="POST" action="https://yoomoney.ru/quickpay/confirm.xml">
+                    <input type="hidden" name="receiver" value="4100119524717720">
+                    <input type="hidden" name="quickpay-form" value="shop">
+                    <input type="hidden" name="targets" value="Sanction License">
+                    <input type="hidden" name="paymentType" value="AC">
+                    <input type="hidden" name="sum" value="1999">
+                    <input type="hidden" name="label" value="sanction">
+                    <input type="hidden" name="successURL" value="https://drive.google.com/file/d/1hZYqmamQ-8FLJ9kgyoTqsCEvMBU8ne2a/view">
+                    <button type="submit" class="btn btn-primary btn-block" data-i18n="pricing_cta">Купить лицензию — $19.99</button>
+                </form>
+                <p class="pricing-guarantee" data-i18n="pricing_guarantee">Гарантия возврата 30 дней. Без вопросов.</p>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2 class="section-title" data-i18n="testimonials_title">Что говорят игроки</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-i18n="testimonial1">"Sanction обнаружил чит, о котором я даже не знал. Спас мой аккаунт от перманентного бана. Стоит каждой копейки."</p>
+                    <div class="testimonial-author">
+                        <strong>Alex K.</strong>
+                        <span data-i18n="testimonial1_role">Игрок GTA Online, 3+ года</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-i18n="testimonial2">"Я управляю RP сервером GTA и рекомендую Sanction всем участникам. Это лучший инструмент для чистоты сообщества."</p>
+                    <div class="testimonial-author">
+                        <strong>Marcus D.</strong>
+                        <span data-i18n="testimonial2_role">Администратор RP сервера</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-i18n="testimonial3">"Просто, быстро и надёжно. Сканирую перед каждой сессией. Ни разу не было проблем с тех пор, как начал использовать."</p>
+                    <div class="testimonial-author">
+                        <strong>Sarah L.</strong>
+                        <span data-i18n="testimonial3_role">Подтверждённый покупатель</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo">SANCTION<span class="logo-dot">.</span>tool</span>
+                    <p data-i18n="footer_desc">Продвинутое обнаружение читов для GTA V. Не связано с Rockstar Games или Take-Two Interactive.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" data-i18n="footer_support">Поддержка</a>
+                    <a href="#" data-i18n="footer_refund">Политика возврата</a>
+                    <a href="#" data-i18n="footer_terms">Условия использования</a>
+                    <a href="#" data-i18n="footer_privacy">Конфиденциальность</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>Sanction © 2026. All rights reserved.</span>
+            </div>
+        </footer>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js"
+            }
+        }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+
+        const canvas = document.getElementById('bgCanvas');
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.set(2.5, 1.8, 5);
+        camera.lookAt(0, 0, 0);
+
+        scene.add(new THREE.AmbientLight(0x334455, 0.9));
+        const pl1 = new THREE.PointLight(0x8899bb, 0.8, 15);
+        pl1.position.set(3, 2, 3);
+        scene.add(pl1);
+        const pl2 = new THREE.PointLight(0x556688, 0.5, 12);
+        pl2.position.set(-2.5, -1, -2);
+        scene.add(pl2);
+
+        const group = new THREE.Group();
+        const ico = new THREE.IcosahedronGeometry(1.1, 0);
+        const wire = new THREE.LineSegments(new THREE.EdgesGeometry(ico), new THREE.LineBasicMaterial({ color: 0x6a7a90, transparent: true, opacity: 0.5 }));
+        group.add(wire);
+        const inner = new THREE.Mesh(new THREE.IcosahedronGeometry(0.85, 0), new THREE.MeshStandardMaterial({ color: 0x405060, roughness: 0.5, metalness: 0.7, transparent: true, opacity: 0.3 }));
+        group.add(inner);
+        const t1 = new THREE.Mesh(new THREE.TorusGeometry(1.45, 0.03, 32, 120), new THREE.MeshStandardMaterial({ color: 0x7a8ea0, roughness: 0.35, metalness: 0.8 }));
+        t1.rotation.x = Math.PI / 2;
+        group.add(t1);
+        const t2 = new THREE.Mesh(new THREE.TorusGeometry(1.55, 0.025, 32, 100), new THREE.MeshStandardMaterial({ color: 0x556878, roughness: 0.4, metalness: 0.75, transparent: true, opacity: 0.7 }));
+        t2.rotation.z = Math.PI / 3;
+        t2.rotation.x = Math.PI / 3;
+        group.add(t2);
+        const pGeom = new THREE.BufferGeometry();
+        const pCount = 340;
+        const pArr = new Float32Array(pCount * 3);
+        for (let i = 0; i < pCount * 3; i += 3) {
+            const a = Math.random() * Math.PI * 2;
+            const r = 1.8 + Math.random() * 0.9;
+            pArr[i] = Math.cos(a) * r;
+            pArr[i + 1] = (Math.random() - 0.5) * 3.2;
+            pArr[i + 2] = Math.sin(a) * r;
+        }
+        pGeom.setAttribute('position', new THREE.BufferAttribute(pArr, 3));
+        group.add(new THREE.Points(pGeom, new THREE.PointsMaterial({ size: 0.025, color: 0x8899bb, transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending })));
+        scene.add(group);
+
+        function animate() {
+            requestAnimationFrame(animate);
+            group.rotation.y += 0.002;
+            group.rotation.x += 0.0006;
+            t1.rotation.z += 0.0015;
+            t2.rotation.y += 0.0018;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        const translations = {
+            ru: {
+                nav_features: 'Возможности', nav_how: 'Как работает', nav_buy: 'Купить',
+                hero_badge: 'Более 12 000 игроков', hero_line1: 'Находим читы.', hero_line2: 'Защищаем аккаунт.',
+                hero_desc: 'Sanction сканирует память, файлы и логи GTA V для обнаружения сторонних модификаций. Опережайте баны с помощью обнаружения в реальном времени.',
+                hero_cta: 'Получить Sanction', hero_learn: 'Подробнее',
+                stat_users: 'Активных пользователей', stat_accuracy: 'Точность обнаружения', stat_bans: 'Ложных банов',
+                features_title: 'Мощный комплекс защиты', features_subtitle: 'Всё необходимое для защиты аккаунта GTA V от читерского ПО.',
+                feature1_title: 'Сканер памяти', feature1_desc: 'Глубокое сканирование активных процессов на наличие известных сигнатур читов.',
+                feature2_title: 'Анализатор логов', feature2_desc: 'Анализирует файлы логов GTA V для поиска аномалий.',
+                feature3_title: 'Проверка целостности файлов', feature3_desc: 'Сравнивает файлы игры с оригинальными хешами.',
+                feature4_title: 'Тихий режим', feature4_desc: 'Работает в фоне без оверлеев. Данные не отправляются на серверы.',
+                feature5_title: 'Автообновления', feature5_desc: 'База сигнатур обновляется автоматически.',
+                feature6_title: 'Портативная версия', feature6_desc: 'Один файл. Без установки. Работает с USB.',
+                how_title: 'Как это работает',
+                step1_title: 'Скачать и запустить', step1_desc: 'Скачайте файл. Запустите перед GTA V.',
+                step2_title: 'Автоматическое сканирование', step2_desc: 'Сканирование занимает менее 10 секунд.',
+                step3_title: 'Просмотр отчёта', step3_desc: 'Зелёный — чисто, красный — требуется действие.',
+                step4_title: 'Играйте безопасно', step4_desc: 'Запускайте GTA V с уверенностью.',
+                pricing_title: 'Простое ценообразование', pricing_subtitle: 'Один платёж. Пожизненный доступ.',
+                pricing_badge: 'Самый популярный', pricing_plan: 'Пожизненная лицензия', pricing_onetime: 'единоразово',
+                pricing_feat1: 'Пожизненный доступ к Sanction', pricing_feat2: 'Все обновления бесплатно',
+                pricing_feat3: 'Сканирование памяти и файлов', pricing_feat4: 'Инструменты анализа логов',
+                pricing_feat5: 'Тихий фоновый режим', pricing_feat6: 'Приоритетная поддержка',
+                pricing_cta: 'Купить лицензию — $19.99', pricing_guarantee: 'Гарантия возврата 30 дней. Без вопросов.',
+                testimonials_title: 'Что говорят игроки',
+                testimonial1: '"Sanction обнаружил чит и спас мой аккаунт от бана."',
+                testimonial1_role: 'Игрок GTA Online, 3+ года',
+                testimonial2: '"Рекомендую Sanction всем участникам RP сервера."',
+                testimonial2_role: 'Администратор RP сервера',
+                testimonial3: '"Просто, быстро и надёжно. Сканирую перед каждой сессией."',
+                testimonial3_role: 'Подтверждённый покупатель',
+                footer_desc: 'Продвинутое обнаружение читов для GTA V.',
+                footer_support: 'Поддержка', footer_refund: 'Политика возврата',
+                footer_terms: 'Условия использования', footer_privacy: 'Конфиденциальность',
+            },
+            en: {
+                nav_features: 'Features', nav_how: 'How It Works', nav_buy: 'Buy Now',
+                hero_badge: 'Trusted by 12,000+ Players', hero_line1: 'Detect Cheats.', hero_line2: 'Protect Your Account.',
+                hero_desc: 'Sanction scans GTA V memory, files, and logs to identify third-party modifications.',
+                hero_cta: 'Get Sanction Now', hero_learn: 'Learn More',
+                stat_users: 'Active Users', stat_accuracy: 'Detection Rate', stat_bans: 'False Bans',
+                features_title: 'Powerful Protection Suite', features_subtitle: 'Everything to keep your GTA V account safe.',
+                feature1_title: 'Memory Scanner', feature1_desc: 'Deep scans for known cheat signatures.',
+                feature2_title: 'Log Analyzer', feature2_desc: 'Finds anomalies in GTA V logs.',
+                feature3_title: 'File Integrity Check', feature3_desc: 'Compares against original hashes.',
+                feature4_title: 'Silent Mode', feature4_desc: 'Background operation without overlays.',
+                feature5_title: 'Auto-Updates', feature5_desc: 'Signature database updates automatically.',
+                feature6_title: 'Portable Build', feature6_desc: 'Single file. No installation. USB compatible.',
+                how_title: 'How It Works',
+                step1_title: 'Download & Launch', step1_desc: 'Portable executable. Launch before GTA V.',
+                step2_title: 'Automatic Scan', step2_desc: 'Scan takes less than 10 seconds.',
+                step3_title: 'Review Report', step3_desc: 'Green means clean, red means action needed.',
+                step4_title: 'Play Safely', step4_desc: 'Launch GTA V with confidence.',
+                pricing_title: 'Simple Pricing', pricing_subtitle: 'One payment. Lifetime access.',
+                pricing_badge: 'Most Popular', pricing_plan: 'Lifetime License', pricing_onetime: 'one-time',
+                pricing_feat1: 'Lifetime access', pricing_feat2: 'All updates free',
+                pricing_feat3: 'Memory & file scanning', pricing_feat4: 'Log analysis tools',
+                pricing_feat5: 'Silent background mode', pricing_feat6: 'Priority support',
+                pricing_cta: 'Buy License — $19.99', pricing_guarantee: '30-day money-back guarantee.',
+                testimonials_title: 'What Players Say',
+                testimonial1: '"Sanction saved my account from a ban."',
+                testimonial1_role: 'GTA Online Player, 3+ years',
+                testimonial2: '"Best tool for keeping RP community clean."',
+                testimonial2_role: 'RP Server Admin',
+                testimonial3: '"Simple, fast, and reliable."',
+                testimonial3_role: 'Verified Buyer',
+                footer_desc: 'Advanced anti-cheat detection for GTA V.',
+                footer_support: 'Support', footer_refund: 'Refund Policy',
+                footer_terms: 'Terms of Service', footer_privacy: 'Privacy Policy',
+            },
+            es: {
+                nav_features: 'Características', nav_how: 'Cómo Funciona', nav_buy: 'Comprar',
+                hero_badge: 'Más de 12,000 jugadores', hero_line1: 'Detecta Trampas.', hero_line2: 'Protege tu Cuenta.',
+                hero_desc: 'Sanction escanea memoria, archivos y registros de GTA V.',
+                hero_cta: 'Obtener Sanction', hero_learn: 'Más Información',
+                stat_users: 'Usuarios Activos', stat_accuracy: 'Tasa de Detección', stat_bans: 'Baneos Falsos',
+                features_title: 'Suite de Protección', features_subtitle: 'Todo para proteger tu cuenta.',
+                feature1_title: 'Escáner de Memoria', feature1_desc: 'Escanea procesos en busca de trampas.',
+                feature2_title: 'Analizador de Registros', feature2_desc: 'Encuentra anomalías en logs.',
+                feature3_title: 'Verificación de Integridad', feature3_desc: 'Compara con hashes originales.',
+                feature4_title: 'Modo Silencioso', feature4_desc: 'Segundo plano sin superposiciones.',
+                feature5_title: 'Actualizaciones', feature5_desc: 'Base de datos se actualiza automáticamente.',
+                feature6_title: 'Portátil', feature6_desc: 'Un solo archivo. Sin instalación.',
+                how_title: 'Cómo Funciona',
+                step1_title: 'Descargar y Ejecutar', step1_desc: 'Ejecuta antes de GTA V.',
+                step2_title: 'Escaneo Automático', step2_desc: 'Menos de 10 segundos.',
+                step3_title: 'Revisar Informe', step3_desc: 'Verde limpio, rojo acción.',
+                step4_title: 'Jugar Seguro', step4_desc: 'Inicia GTA V con confianza.',
+                pricing_title: 'Precio Simple', pricing_subtitle: 'Un pago. Acceso vitalicio.',
+                pricing_badge: 'Más Popular', pricing_plan: 'Licencia Vitalicia', pricing_onetime: 'pago único',
+                pricing_feat1: 'Acceso vitalicio', pricing_feat2: 'Actualizaciones gratis',
+                pricing_feat3: 'Escaneo de memoria', pricing_feat4: 'Herramientas de logs',
+                pricing_feat5: 'Modo silencioso', pricing_feat6: 'Soporte prioritario',
+                pricing_cta: 'Comprar — $19.99', pricing_guarantee: 'Garantía de 30 días.',
+                testimonials_title: 'Lo Que Dicen',
+                testimonial1: '"Sanction salvó mi cuenta."',
+                testimonial1_role: 'Jugador GTA Online',
+                testimonial2: '"La mejor herramienta para RP."',
+                testimonial2_role: 'Admin Servidor RP',
+                testimonial3: '"Simple, rápido, fiable."',
+                testimonial3_role: 'Comprador Verificado',
+                footer_desc: 'Detección avanzada de trampas.',
+                footer_support: 'Soporte', footer_refund: 'Reembolso',
+                footer_terms: 'Términos', footer_privacy: 'Privacidad',
+            },
+            de: {
+                nav_features: 'Funktionen', nav_how: 'So Funktionierts', nav_buy: 'Kaufen',
+                hero_badge: 'Über 12.000 Spieler', hero_line1: 'Cheats erkennen.', hero_line2: 'Account schützen.',
+                hero_desc: 'Sanction scannt Speicher, Dateien und Logs.',
+                hero_cta: 'Sanction Holen', hero_learn: 'Mehr Erfahren',
+                stat_users: 'Aktive Nutzer', stat_accuracy: 'Erkennungsrate', stat_bans: 'Falsche Banns',
+                features_title: 'Schutzpaket', features_subtitle: 'Alles für Account-Sicherheit.',
+                feature1_title: 'Speicherscanner', feature1_desc: 'Tiefenscan für Cheats.',
+                feature2_title: 'Log-Analysator', feature2_desc: 'Findet Anomalien.',
+                feature3_title: 'Dateiprüfung', feature3_desc: 'Vergleich mit Original-Hashes.',
+                feature4_title: 'Silent-Modus', feature4_desc: 'Hintergrund ohne Overlays.',
+                feature5_title: 'Auto-Updates', feature5_desc: 'Datenbank aktualisiert sich.',
+                feature6_title: 'Portabel', feature6_desc: 'Eine Datei. Keine Installation.',
+                how_title: 'So Funktionierts',
+                step1_title: 'Download & Start', step1_desc: 'Vor GTA V starten.',
+                step2_title: 'Auto-Scan', step2_desc: 'Weniger als 10 Sekunden.',
+                step3_title: 'Bericht prüfen', step3_desc: 'Grün sauber, Rot handeln.',
+                step4_title: 'Sicher spielen', step4_desc: 'GTA V mit Vertrauen starten.',
+                pricing_title: 'Preise', pricing_subtitle: 'Eine Zahlung. Lebenslang.',
+                pricing_badge: 'Beliebt', pricing_plan: 'Lebenslange Lizenz', pricing_onetime: 'einmalig',
+                pricing_feat1: 'Lebenslanger Zugriff', pricing_feat2: 'Updates kostenlos',
+                pricing_feat3: 'Speicherscan', pricing_feat4: 'Log-Tools',
+                pricing_feat5: 'Silent-Modus', pricing_feat6: 'Prioritäts-Support',
+                pricing_cta: 'Kaufen — $19.99', pricing_guarantee: '30-Tage Geld-zurück.',
+                testimonials_title: 'Was Spieler Sagen',
+                testimonial1: '"Sanction hat meinen Account gerettet."',
+                testimonial1_role: 'GTA Online Spieler',
+                testimonial2: '"Bestes Tool für RP Server."',
+                testimonial2_role: 'RP Server Admin',
+                testimonial3: '"Einfach, schnell, zuverlässig."',
+                testimonial3_role: 'Verifizierter Käufer',
+                footer_desc: 'Cheat-Erkennung für GTA V.',
+                footer_support: 'Support', footer_refund: 'Rückerstattung',
+                footer_terms: 'AGB', footer_privacy: 'Datenschutz',
+            },
+            zh: {
+                nav_features: '功能', nav_how: '原理', nav_buy: '购买',
+                hero_badge: '超过12000名玩家', hero_line1: '检测作弊。', hero_line2: '保护账户。',
+                hero_desc: 'Sanction扫描GTA V内存、文件和日志。',
+                hero_cta: '获取Sanction', hero_learn: '了解更多',
+                stat_users: '活跃用户', stat_accuracy: '检测率', stat_bans: '误封',
+                features_title: '保护套件', features_subtitle: '保护账户所需的一切。',
+                feature1_title: '内存扫描', feature1_desc: '深度扫描作弊特征。',
+                feature2_title: '日志分析', feature2_desc: '发现异常日志。',
+                feature3_title: '文件检查', feature3_desc: '对比原始哈希值。',
+                feature4_title: '静默模式', feature4_desc: '后台运行无覆盖。',
+                feature5_title: '自动更新', feature5_desc: '数据库自动更新。',
+                feature6_title: '便携版', feature6_desc: '单文件，无需安装。',
+                how_title: '工作原理',
+                step1_title: '下载启动', step1_desc: '启动GTA V前运行。',
+                step2_title: '自动扫描', step2_desc: '不到10秒。',
+                step3_title: '查看报告', step3_desc: '绿色干净，红色处理。',
+                step4_title: '安全游戏', step4_desc: '放心启动GTA V。',
+                pricing_title: '定价', pricing_subtitle: '一次付款，终身访问。',
+                pricing_badge: '最受欢迎', pricing_plan: '终身许可', pricing_onetime: '一次性',
+                pricing_feat1: '终身访问', pricing_feat2: '免费更新',
+                pricing_feat3: '内存文件扫描', pricing_feat4: '日志工具',
+                pricing_feat5: '静默模式', pricing_feat6: '优先支持',
+                pricing_cta: '购买 — $19.99', pricing_guarantee: '30天退款保证。',
+                testimonials_title: '玩家评价',
+                testimonial1: '"Sanction救了我的账户。"',
+                testimonial1_role: 'GTA Online玩家',
+                testimonial2: '"RP服务器最佳工具。"',
+                testimonial2_role: 'RP管理员',
+                testimonial3: '"简单快速可靠。"',
+                testimonial3_role: '已验证购买者',
+                footer_desc: 'GTA V高级作弊检测。',
+                footer_support: '支持', footer_refund: '退款',
+                footer_terms: '条款', footer_privacy: '隐私',
+            }
+        };
+
+        function getCurrentLanguage() {
+            return localStorage.getItem('sanction_lang') || 'ru';
+        }
+
+        function setLanguage(lang) {
+            localStorage.setItem('sanction_lang', lang);
+            applyTranslations(lang);
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+        }
+
+        function applyTranslations(lang) {
+            const t = translations[lang] || translations['ru'];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) {
+                    if (el.tagName === 'BUTTON') {
+                        el.textContent = t[key];
+                    } else {
+                        el.textContent = t[key];
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = getCurrentLanguage();
+            applyTranslations(savedLang);
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === savedLang);
+                btn.addEventListener('click', () => {
+                    setLanguage(btn.getAttribute('data-lang'));
+                });
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#features' || href === '#how-it-works' || href === '#pricing') {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
